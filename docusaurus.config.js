@@ -56,7 +56,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
-            'https://github.com/argosnotary/docs/',
+            'https://github.com/argosnotary/docs/tree/master',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
