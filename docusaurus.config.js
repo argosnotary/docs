@@ -19,24 +19,6 @@ module.exports = {
           position: 'left',
         },
         {
-            to: 'docs/10_get_started/intro',
-            activeBasePath: 'docs',
-            label: 'Getting Started',
-            position: 'left',
-          },
-          {
-              to: 'docs/20_using/intro',
-              activeBasePath: 'docs',
-              label: 'Using Argos',
-              position: 'left',
-            },
-            {
-                to: 'docs/40_administration/intro',
-                activeBasePath: 'docs',
-                label: 'Administration',
-                position: 'left',
-              },
-        {
           href: 'https://github.com/argosnotary/argos',
           label: 'GitHub',
           position: 'right',
