@@ -1,6 +1,7 @@
 ---
-id: intro
-title: Introduction to Argos Notary
+id: 10_get_started
+title: Getting started with Argos Notary
+sidebar_label: Getting Started
 ---
 
 You can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/).

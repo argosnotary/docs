@@ -1,5 +1,5 @@
 ---
-id: overview
+id: 10_overview
 title: Overview
 ---
 
@@ -14,7 +14,7 @@ When a [**functionary**](../50_reference/30_terminology#functionary) performs a 
 
 The [**layout**](../50_reference/30_terminology#layout), signed by the [**project owners**](../50_reference/30_terminology#project-owner) together with the links, signed by the designated [**functionaries**](../50_reference/30_terminology#functionary) for a particular [**supply chain run**](../50_reference/30_terminology#scr), can be verified by the service.
 
-This **Overview** is ashort description of the system. A complete definition can be found in other parts of the documentation.
+This **Overview** is a short description of the system. A complete definition can be found in other parts of the documentation.
 
 ## System overview
  
