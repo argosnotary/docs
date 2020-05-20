@@ -63,5 +63,5 @@ When the Argos Notary Service verifies the end product on behalf of Deploy, it w
 
 If all of these _verifications_ pass, the Argos Notary Service returns the valid response on the request.
 
-![Workflow](../../docs/images/00_overview_workflow.svg)<sub>1. the workflow for this example</sub>
+![Workflow](../images/00_overview_workflow.svg)<sub>1. the workflow for this example</sub>
 

@@ -1,31 +1,41 @@
 #!/bin/bash
-
-VERSION=$1
+#
+# Copyright (C) 2019 - 2020 Rabobank Nederland
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#         http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
 
 BRANCH=master
 
-DOC_DIRECTORY="docs/50_reference"
+DOC_DIRECTORY="docs"
+
+REFERENCE_DIRECTORY="${DOC_DIRECTORY}/50_reference"
 
 JARS="argos-service argos4j"
 
-usage() {
-    echo "USAGE: $0 <version>"
-    exit 1
-}
+rm -f *.jar
 
-if [ -z "${VERSION}" ]; then
-    echo "ERROR: no version"
-    usage
-fi
+read VERSION < VERSION
+echo "generating documents for Argos Notary version ${VERSION}"
 
-rm -rf  ${DOC_DIRECTORY}/javadoc/*/* docs/50_reference/openapi
-
-npx openapi-generator generate -i "https://raw.githubusercontent.com/argosnotary/argos-parent/${BRANCH}/argos-service-api/api.yml" -o ${DOC_DIRECTORY}/openapi -g html2
+npx openapi-generator generate -i "https://raw.githubusercontent.com/argosnotary/argos-parent/${BRANCH}/argos-service-api/api.yml" -o ${REFERENCE_DIRECTORY}/openapi -g html2
 
 for jar in $JARS; do
     curl -OLJ "https://repo1.maven.org/maven2/com/rabobank/argos/${jar}/${VERSION}/${jar}-${VERSION}-javadoc.jar"
-    unzip ${jar}*.jar -d ${DOC_DIRECTORY}/javadoc/${jar}
+    unzip -u ${jar}*.jar -d ${REFERENCE_DIRECTORY}/javadoc/${jar}
 done
 
-rm argos*.jar
+curl -OJL "http://sourceforge.net/projects/plantuml/files/plantuml.jar/download"
+
+java -jar plantuml.jar -tsvg ${DOC_DIRECTORY}/images/plantuml/
 

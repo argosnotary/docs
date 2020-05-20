@@ -13,8 +13,10 @@
     "@docusaurus/preset-classic": "^2.0.0-alpha.54",
     "@openapitools/openapi-generator-cli": "^1.0.13-4.3.1",
     "classnames": "^2.2.6",
+    "plantuml-encoder": "^1.4.0",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react-dom": "^16.8.4",
+    "remarkable-plantuml": "^1.1.0"
   },
   "browserslist": {
     "production": [
