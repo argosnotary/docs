@@ -46,7 +46,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Argos Notary, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Argos Notary, Built with Docusaurus.`,
     },
   },
   presets: [

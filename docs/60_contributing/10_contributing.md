@@ -4,8 +4,7 @@ title: Contributing to Argos Notary
 sidebar_label: Contributing
 ---
 
-We would love for you to contribute to Argos Notary and help make it even better than it is
-today! As a contributor, here are the guidelines we would like you to follow:
+We would love for you to contribute to Argos Notary and help make it even better than it is today! As a contributor, here are the guidelines we would like you to follow:
 
  - [Code of Conduct](20_code_of_conduct)
  - [Issues and Bugs](#issue)
@@ -16,26 +15,19 @@ today! As a contributor, here are the guidelines we would like you to follow:
  - [Signing the CLA](#cla)
 
 ## <a name="coc"></a> Code of Conduct
-Help us keep Argos open and inclusive. Please read and follow our [Code of Conduct](20_code_of_conduct).
+Help us keep Argos Notary open and inclusive. Please read and follow our [Code of Conduct](20_code_of_conduct).
 
 ## <a name="question"></a> Got a Question or Problem?
 
 Do not open issues for general support questions as we want to keep GitHub issues for bug reports and feature requests.
 
 ## <a name="issue"></a> Found a Bug?
-If you find a bug in the source code, you can help us by
-[submitting an issue](#submit-issue) to our [GitHub Repository][github]. Even better, you can
-[submit a Pull Request](#submit-pr) with a fix.
+If you find a bug in the source code, you can help us by [submitting an issue](#submit-issue) to our [GitHub Repository][github]. Even better, you can [submit a Pull Request](#submit-pr) with a fix.
 
 ## <a name="feature"></a> Missing a Feature?
-You can *request* a new feature by [submitting an issue](#submit-issue) to our GitHub
-Repository. If you would like to *implement* a new feature, please submit an issue with
-a proposal for your work first, to be sure that we can use it.
-Please consider what kind of change it is:
+You can *request* a new feature by [submitting an issue](#submit-issue) to our GitHub Repository. If you would like to *implement* a new feature, please submit an issue with a proposal for your work first, to be sure that we can use it. Please consider what kind of change it is:
 
-* For a **Major Feature**, first open an issue and outline your proposal so that it can be
-discussed. This will also allow us to better coordinate our efforts, prevent duplication of work,
-and help you to craft the change so that it is successfully accepted into the project.
+* For a **Major Feature**, first open an issue and outline your proposal so that it can be discussed. This will also allow us to better coordinate our efforts, prevent duplication of work, and help you to craft the change so that it is successfully accepted into the project.
 * **Small Features** can be crafted and directly [submitted as a Pull Request](#submit-pr).
 
 ## <a name="submit"></a> Submission Guidelines
@@ -52,17 +44,14 @@ We will be insisting on a minimal reproduction scenario in order to save maintai
 
 Unfortunately, we are not able to investigate / fix bugs without a minimal reproduction, so if we don't hear back from you we are going to close an issue that doesn't have enough info to be reproduced.
 
-You can file new issues by selecting from our [new issue templates](https://github.com/argosnotary/argos-parent/issues/new/choose) and filling out the issue template.
-
+You can file new issues by selecting from our [new issue templates](https://github.com/argosnotary/argos/issues/new/choose) and filling out the issue template.
 
 ### <a name="submit-pr"></a> Submitting a Pull Request (PR)
 Before you submit your Pull Request (PR) consider the following guidelines:
 
-1. Search [GitHub](https://github.com/argosnotary/argos-parent/pulls) for an open or closed PR
-  that relates to your submission. You don't want to duplicate effort.
-1. Be sure that an issue describes the problem you're fixing, or documents the design for the feature you'd like to add.
-  Discussing the design up front helps to ensure that we're ready to accept your work.
-1. Fork the rabobank/argos repo.
+1. Search GitHub repository in the [argosnotary organization](https://github.com/argosnotary) for an open or closed PR that relates to your submission. You don't want to duplicate effort.
+1. Be sure that an issue describes the problem you're fixing, or documents the design for the feature you'd like to add. Discussing the design up front helps to ensure that we're ready to accept your work.
+1. Fork the repo.
 1. Make your changes in a new git branch:
 
 ```shell
@@ -71,11 +60,8 @@ Before you submit your Pull Request (PR) consider the following guidelines:
 
 1. Create your patch, **including appropriate test cases**.
 1. Follow our [Coding Rules](#rules).
-1. Run the full Argos test suite, as described in the [developer documentation](docs/DEVELOPER.md),
-  and ensure that all tests pass.
-1. Commit your changes using a descriptive commit message that follows our
-  [commit message conventions](#commit). Adherence to these conventions
-  is necessary because release notes are automatically generated from these messages.
+1. Run the full Argos Notary test suite, as described in the [developer documentation](30_developing), and ensure that all tests pass.
+1. Commit your changes using a descriptive commit message that follows our [commit message conventions](#commit). Adherence to these conventions is necessary because release notes are automatically generated from these messages.
 
 ```shell
    git commit -a
@@ -91,7 +77,7 @@ Before you submit your Pull Request (PR) consider the following guidelines:
 1. In GitHub, send a pull request to `argos:master`.
 * If we suggest changes then:
   * Make the required updates.
-  * Re-run the Argos test suites to ensure tests are still passing.
+  * Re-run the Argos Notary test suites to ensure tests are still passing.
   * Rebase your branch and force push to your GitHub repository (this will update your Pull Request):
 
 ```shell
@@ -103,8 +89,7 @@ That's it! Thank you for your contribution!
 
 #### After your pull request is merged
 
-After your pull request is merged, you can safely delete your branch and pull the changes
-from the main (upstream) repository:
+After your pull request is merged, you can safely delete your branch and pull the changes from the main (upstream) repository:
 
 * Delete the remote branch on GitHub either through the GitHub web UI or your local shell as follows:
 
@@ -157,13 +142,10 @@ The generated changes should be comitted.
 
 ## <a name="commit"></a> Commit Message Guidelines
 
-We have very precise rules over how our git commit messages can be formatted.  This leads to **more
-readable messages** that are easy to follow when looking through the **project history**.  But also,
-we use the git commit messages to **generate the Argos change log**.
+We have very precise rules over how our git commit messages can be formatted.  This leads to **more readable messages** that are easy to follow when looking through the **project history**.  But also, we use the git commit messages to **generate the Argos Notary change log**.
 
 ### Commit Message Format
-Each commit message consists of a **header**, a **body** and a **footer**.  The header has a special
-format that includes a **type**, a **scope** and a **subject**:
+Each commit message consists of a **header**, a **body** and a **footer**.  The header has a special format that includes a **type**, a **scope** and a **subject**:
 
 ```
 <type>(<scope>): <subject>
@@ -175,8 +157,7 @@ format that includes a **type**, a **scope** and a **subject**:
 
 The **header** is mandatory and the **scope** of the header is optional.
 
-Any line of the commit message cannot be longer 100 characters! This allows the message to be easier
-to read on GitHub as well as in various git tools.
+Any line of the commit message cannot be longer 100 characters! This allows the message to be easier to read on GitHub as well as in various git tools.
 
 The footer should contain a [closing reference to an issue](https://help.github.com/articles/closing-issues-via-commit-messages/) if any.
 
@@ -219,9 +200,7 @@ The following is the list of supported scopes:
 There are currently a few exceptions to the "use package name" rule:
 
 * **changelog**: used for updating the release notes in CHANGELOG.md
-* none/empty string: useful for `style`, `test` and `refactor` changes that are done across all
-  packages (e.g. `style: add missing semicolons`) and for docs changes that are not related to a
-  specific package (e.g. `docs: fix typo in tutorial`).
+* none/empty string: useful for `style`, `test` and `refactor` changes that are done across all packages (e.g. `style: add missing semicolons`) and for docs changes that are not related to a specific package (e.g. `docs: fix typo in tutorial`).
 
 ### Subject
 The subject contains a succinct description of the change:
@@ -231,12 +210,10 @@ The subject contains a succinct description of the change:
 * no dot (.) at the end
 
 ### Body
-Just as in the **subject**, use the imperative, present tense: "change" not "changed" nor "changes".
-The body should include the motivation for the change and contrast this with previous behavior.
+Just as in the **subject**, use the imperative, present tense: "change" not "changed" nor "changes". The body should include the motivation for the change and contrast this with previous behavior.
 
 ### Footer
-The footer should contain any information about **Breaking Changes** and is also the place to
-reference GitHub issues that this commit **Closes**.
+The footer should contain any information about **Breaking Changes** and is also the place to reference GitHub issues that this commit **Closes**.
 
 **Breaking Changes** should start with the word `BREAKING CHANGE:` with a space or two newlines. The rest of the commit message is then used for this.
 
