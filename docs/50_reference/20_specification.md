@@ -1,7 +1,7 @@
 ---
-id: api
+id: 20_specification
 title: Introduction to Argos Notary
-sidebar_label: REST API Reference
+sidebar_label: Specification
 ---
 
 You can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/).

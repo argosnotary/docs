@@ -13,7 +13,7 @@ module.exports = {
       },
       links: [
         {
-          to: 'docs/00_introduction/intro',
+          to: 'docs/00_overview/overview',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'left',
