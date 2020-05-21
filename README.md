@@ -8,9 +8,19 @@
    $ npm run start
 ```
 
-### Generate openapi documentation and javadoc
+### Generate openapi documentation, javadoc and uml images with plantuml
 
 ```shell
-   $ ./generate_docs.sh <version>
+   $ ./generate_docs.sh
+```
+
+## Deploy to argosnotary.github.io
+
+At first commit the made changes.
+
+```
+   $ export GIT_USER=<git user>
+   $ export USE_SSH=true # optional
+   $ yarn deploy
 ```
 
