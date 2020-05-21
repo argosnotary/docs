@@ -15,11 +15,11 @@
  */
 module.exports = {
   title: 'Argos Notary',
-  url: 'https://argosnotary.com',
+  url: 'https://argosnotary.github.io',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
-  organizationName: 'Argos Notary Incorporated',
-  projectName: 'argosnotary/argos',
+  organizationName: 'argosnotary',
+  projectName: 'argosnotary.github.io',
   themeConfig: {
     navbar: {
       logo: {

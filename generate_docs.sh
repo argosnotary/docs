@@ -17,9 +17,8 @@
 
 BRANCH=master
 
-DOC_DIRECTORY="docs"
-
-REFERENCE_DIRECTORY="${DOC_DIRECTORY}/50_reference"
+GENERATED_DIRECTORY="static/generated"
+PLANTUML_DIRECTORY="static/img/plantuml"
 
 JARS="argos-service argos4j"
 
@@ -28,14 +27,14 @@ rm -f *.jar
 read VERSION < VERSION
 echo "generating documents for Argos Notary version ${VERSION}"
 
-npx openapi-generator generate -i "https://raw.githubusercontent.com/argosnotary/argos-parent/${BRANCH}/argos-service-api/api.yml" -o ${REFERENCE_DIRECTORY}/openapi -g html2
+npx openapi-generator generate -i "https://raw.githubusercontent.com/argosnotary/argos-parent/${BRANCH}/argos-service-api/api.yml" -o ${GENERATED_DIRECTORY}/openapi -g html2
 
 for jar in $JARS; do
     curl -OLJ "https://repo1.maven.org/maven2/com/rabobank/argos/${jar}/${VERSION}/${jar}-${VERSION}-javadoc.jar"
-    unzip -u ${jar}*.jar -d ${REFERENCE_DIRECTORY}/javadoc/${jar}
+    unzip -u ${jar}*.jar -d ${GENERATED_DIRECTORY}/javadoc/${jar}
 done
 
 curl -OJL "http://sourceforge.net/projects/plantuml/files/plantuml.jar/download"
 
-java -jar plantuml.jar -tsvg ${DOC_DIRECTORY}/images/plantuml/
+java -jar plantuml.jar -tsvg "${PLANTUML_DIRECTORY}/"
 
