@@ -34,7 +34,7 @@ module.exports = {
           position: 'left',
         },
         {
-          href: 'https://github.com/argosnotary/argos',
+          href: 'https://github.com/argosnotary',
           label: 'GitHub',
           position: 'right',
         },

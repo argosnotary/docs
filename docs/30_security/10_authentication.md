@@ -8,5 +8,5 @@ sidebar_label: Authentication
 ### Personal Accounts
 ### Service Accounts
 ## OAUTH
-![OAUTH](../images/plantuml/30_security_oauth.svg)
+![OAUTH](/img/plantuml/30_security_oauth.svg)
 ## Basic
