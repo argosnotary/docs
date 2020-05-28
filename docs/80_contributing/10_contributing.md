@@ -3,6 +3,9 @@ id: 10_contributing
 title: Contributing to Argos Notary
 sidebar_label: Contributing
 ---
+:::caution
+This is page is work in progress
+:::
 
 We would love for you to contribute to Argos Notary and help make it even better than it is today! As a contributor, here are the guidelines we would like you to follow:
 

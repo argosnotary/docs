@@ -16,12 +16,12 @@
 
 @startuml
 
-caption Metadata for Layouts and Links
+caption MetaBlock for Layouts and Links
 
 skinparam shadowing<<with_shadow>> true
 skinparam backgroundColor #SeaShell
 
-class Metadata {  
+class MetaBlock {  
 }
 
 class Signature {
@@ -43,8 +43,8 @@ class Layout {
 class Link {
 }
 
-Metadata "1" -left-> "1..*" Signature
-Metadata "1" -right-> "1..*" Signable
+MetaBlock "1" -left-> "1..*" Signature
+MetaBlock "1" -right-> "1..*" Signable
 Signable <|-- Layout
 Signable <|-- Link
 Signature "1" -down-> "1" Key

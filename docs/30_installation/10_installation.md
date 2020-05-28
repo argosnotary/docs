@@ -1,7 +1,10 @@
 ---
 id: 10_installation
-title: Installing Argos Notary Service
+title: wip
 sidebar_label: Installation
 ---
 
 
+:::caution
+This is page is work in progress
+:::

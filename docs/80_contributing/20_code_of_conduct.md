@@ -3,6 +3,9 @@ id: 20_code_of_conduct
 title: Contributor Code of Conduct
 sidebar_label: Code of Conduct
 ---
+:::caution
+This is page is work in progress
+:::
 
 As contributors and maintainers of the Argos Notary project, we pledge to respect everyone who contributes by posting issues, updating documentation, submitting pull requests, providing feedback in comments, and any other activities.
 

@@ -1,5 +1,5 @@
 ---
-id: 30_terminology
+id: 10_terminology
 title: Terminology
 sidebarlabel: Terminology
 ---

@@ -4,6 +4,9 @@ title: Authorization
 sidebar_label: Authorization
 ---
 
+:::caution
+This is page is work in progress
+:::
 ## Introduction
 
 ## Permissions

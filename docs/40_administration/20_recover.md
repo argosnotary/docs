@@ -1,7 +1,7 @@
 ---
-id: 20_maintenance
-title: Maintaining Argos Notary
-sidebar_label: Maintenance
+id: 20_recover
+title: Recover Admin Role
+sidebar_label: Recover Admin
 ---
 
 ## Recover the Administrator Role

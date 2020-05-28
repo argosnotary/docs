@@ -3,6 +3,9 @@ id: 30_developing
 title: Building, Testing and Releasing Argos Argos Notary
 sidebar_label: Developing
 ---
+:::caution
+This is page is work in progress
+:::
 
 This document describes how to set up your development environment to build and test Argos.
 It also explains the basic mechanics of using `git`, `maven`.
