@@ -14,6 +14,7 @@ We would love for you to contribute to Argos Notary and help make it even better
  - [Feature Requests](#feature)
  - [Submission Guidelines](#submit)
  - [Coding Rules](#rules)
+ - [Formatting your source code](#clang-format)
  - [Commit Message Guidelines](#commit)
  - [Signing the CLA](#cla)
 
@@ -125,6 +126,13 @@ To ensure consistency throughout the source code, keep these rules in mind as yo
 * All public API methods **must be documented**. (Details TBC).
 * Every source file should contain the [license header](docs/LicenseHeader.java). See [License Header Instructions](#header_instructions).
 * Wrap all code at **100 characters**. An automated formatter is available, see the [developing instructions](30_developing#clang-format).
+
+## <a name="clang-format"></a> Formatting your source code
+
+Argos uses [clang-format](http://clang.llvm.org/docs/ClangFormat.html) to format the source code.
+If the source code is not properly formatted, the CI will fail and the PR cannot be merged.
+
+A better way is to set up your IDE to format the changed file on each file save.
   
 ## <a name="header_instructions"></a> License Header Instructions
 If you added a new file this should contain the default license header which gives the copy rights to the project.

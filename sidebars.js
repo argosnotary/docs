@@ -46,6 +46,6 @@ module.exports = {
     	},
     	{type: "link", label:"REST api", href: "https://argosnotary.github.io/generated/openapi"},
     ],
-    Contributing: ['80_contributing/10_contributing','80_contributing/20_code_of_conduct','80_contributing/30_developing'],
+    Contributing: ['80_contributing/10_contributing','80_contributing/20_code_of_conduct'],
   },
 };
