@@ -58,7 +58,7 @@ Before you submit your Pull Request (PR) consider the following guidelines:
 1. Make your changes in a new git branch:
 
 ```shell
-   git checkout -b my-fix-branch master
+$ git checkout -b my-fix-branch master
 ```
 
 1. Create your patch, **including appropriate test cases**.
@@ -67,14 +67,14 @@ Before you submit your Pull Request (PR) consider the following guidelines:
 1. Commit your changes using a descriptive commit message that follows our [commit message conventions](#commit). Adherence to these conventions is necessary because release notes are automatically generated from these messages.
 
 ```shell
-   git commit -a
+git commit -a
 ```
     Note: the optional commit `-a` command line option will automatically "add" and "rm" edited files.
 
 1. Push your branch to GitHub:
 
 ```shell
-   git push origin my-fix-branch
+git push origin my-fix-branch
 ```
 
 1. In GitHub, send a pull request to `argos:master`.
@@ -84,8 +84,8 @@ Before you submit your Pull Request (PR) consider the following guidelines:
   * Rebase your branch and force push to your GitHub repository (this will update your Pull Request):
 
 ```shell
-   git rebase master -i
-   git push -f
+git rebase master -i
+git push -f
 ```
 
 That's it! Thank you for your contribution!
@@ -97,25 +97,25 @@ After your pull request is merged, you can safely delete your branch and pull th
 * Delete the remote branch on GitHub either through the GitHub web UI or your local shell as follows:
 
 ```shell
-   git push origin --delete my-fix-branch
+git push origin --delete my-fix-branch
 ```
 
 * Check out the master branch:
 
 ```shell
-   git checkout master -f
+git checkout master -f
 ```
 
 * Delete the local branch:
 
 ```shell
-   git branch -D my-fix-branch
+git branch -D my-fix-branch
 ```
 
 * Update your master with the latest upstream version:
 
 ```shell
-   git pull --ff upstream master
+git pull --ff upstream master
 ```
 
 ## <a name="rules"></a> Coding Rules
@@ -129,17 +129,34 @@ To ensure consistency throughout the source code, keep these rules in mind as yo
 ## <a name="header_instructions"></a> License Header Instructions
 If you added a new file this should contain the default license header which gives the copy rights to the project.
 
-Headers can be added with the following command:
+Headers can be checked and added with the following commands depending on the build tool:
+
+### maven
+At first check the licenses:
 
 ```shell
-   mvn license:format
+mvn license:check
 ```
 
-After this you can check the result:
+If this fails use:
 
 ```shell
-   mvn license:check
+mvn license:format
 ```
+
+### Gradle
+At first check the licenses:
+
+```shell
+gradle license
+```
+
+If this fails use:
+
+```shell
+gradle licenseFormat
+```
+
 
 The generated changes should be comitted.
 

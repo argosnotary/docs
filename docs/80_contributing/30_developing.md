@@ -108,19 +108,19 @@ We use Semantic Versioning as stated on [semver.org](http://semver.org)
 To make a release perform the following actions:
 * When necessary change the version
 
-```
-    tools/change_project_version.sh [version]
+```shell
+tools/change_project_version.sh [version]
 ```
 * Create a tag and push to github:
 
-```
-    tools/release_with_tag.sh [version]
+```shell
+tools/release_with_tag.sh [version]
 ```
 After this drone.io will create and publish a release.
 * Change the version to the possible future version.
 
-```
-    tools/change_project_version.sh [future version]
+```shell
+tools/change_project_version.sh [future version]
 ```
 This version can always be changed in a future release.
 
