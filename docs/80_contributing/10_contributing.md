@@ -64,7 +64,7 @@ $ git checkout -b my-fix-branch master
 
 1. Create your patch, **including appropriate test cases**.
 1. Follow our [Coding Rules](#rules).
-1. Run the full Argos Notary test suite, as described in the [developer documentation](30_developing), and ensure that all tests pass.
+1. Run the full Argos Notary test suite, as described in the developer documentation of the project and ensure that all tests pass.
 1. Commit your changes using a descriptive commit message that follows our [commit message conventions](#commit). Adherence to these conventions is necessary because release notes are automatically generated from these messages.
 
 ```shell
@@ -81,7 +81,7 @@ git push origin my-fix-branch
 1. In GitHub, send a pull request to `argos:master`.
 * If we suggest changes then:
   * Make the required updates.
-  * Re-run the Argos Notary test suites to ensure tests are still passing.
+  * Re-run the test suites to ensure tests are still passing.
   * Rebase your branch and force push to your GitHub repository (this will update your Pull Request):
 
 ```shell
@@ -124,8 +124,8 @@ To ensure consistency throughout the source code, keep these rules in mind as yo
 
 * All features or bug fixes **must be tested** by one or more specs (unit-tests).
 * All public API methods **must be documented**. (Details TBC).
-* Every source file should contain the [license header](docs/LicenseHeader.java). See [License Header Instructions](#header_instructions).
-* Wrap all code at **100 characters**. An automated formatter is available, see the [developing instructions](30_developing#clang-format).
+* Every source file should contain the license header. See [License Header Instructions](#header_instructions).
+* Wrap all code at **100 characters**. An automated formatter is available, see the [format instructions](#clang-format).
 
 ## <a name="clang-format"></a> Formatting your source code
 
@@ -249,3 +249,4 @@ A detailed explanation can be found in this [document][commit-message-format].
 
 [commit-message-format]: https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#
 [github]: https://github.com/argosnotary/argos
+
