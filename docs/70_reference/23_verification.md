@@ -7,7 +7,7 @@ sidebar_label: Verification
 This is page is work in progress
 :::
 
-## Verification
+## Verification Flow
 ![Verification](/img/plantuml/70_reference_verification_flow.svg)
 
 
