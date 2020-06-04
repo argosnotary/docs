@@ -67,4 +67,8 @@ If all of these _verifications_ pass, the Argos Notary Service returns the valid
 
 ## Acknowledgement
 
+Argos Notary is an implementation of or at least inspired by the [in-toto specification](https://github.com/in-toto/docs/blob/master/in-toto-spec.md). 
+This is the reason some parts of this documentation are the same as that specification. We couldn't completely refer to that specification 
+because there also large differences. We are absolutely gratefull for the inspiration we got from their work.
+
 

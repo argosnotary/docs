@@ -18,12 +18,20 @@ module.exports = {
   {
     Overview: ['00_overview/10_overview'],
     'Getting started': ['10_get_started/10_get_started', '10_get_started/20_examples'],
-    Architecture: ['20_architecture/10_architecture', '20_architecture/20_decisions'],
+    Architecture: [
+    	'20_architecture/10_architecture', 
+    	{ 
+    		type: 'category',
+    		label: 'Architectural Decisions',
+    		items: [ '20_architecture/20_decisions/10_intro', '20_architecture/20_decisions/99_template']
+    	},
+    ],
     Installation: ['30_installation/10_installation', '30_installation/20_upgrade'],
     'System administration': ['40_administration/10_maintenance', '40_administration/20_recover'],
     Security: ['50_security/10_authentication', '50_security/20_authorization'],
     'Supply Chain management': ['60_supplychain_management/10_wip'],
     Reference: [
+    	'70_reference/10_terminology',
     	'70_reference/20_layout',
     	'70_reference/21_link',
     	'70_reference/22_signing',
@@ -38,6 +46,6 @@ module.exports = {
     	},
     	{type: "link", label:"REST api", href: "https://argosnotary.github.io/generated/openapi"},
     ],
-    Contributing: ['80_contributing/10_contributing','80_contributing/20_code_of_conduct','80_contributing/30_developing'],
+    Contributing: ['80_contributing/10_contributing','80_contributing/20_code_of_conduct'],
   },
 };

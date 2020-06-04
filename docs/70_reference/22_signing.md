@@ -7,13 +7,15 @@ sidebar_label: Signing
 This is page is work in progress
 :::
 
-To make the very Link is signed 1 time and every Layout 1 or more times.
+Every Link is signed 1 time and every Layout 1 or more times. This signature is stored
+in the metablock which is wrapping the link or layout.
+
+The objects to sign are serialized to JSON strings witch are canonalized by removing all 
+whitespace and sorting all attributes. After this the JSON string is signed by `SHA256withRSA`.
 
 ## MetaBlock
 
 ![MetaBlock](/img/plantuml/70_reference_metablock.svg)
-
-### Signature
 
 ## Specification
 
@@ -31,7 +33,7 @@ type LinkMetaBlock = {
 
 type Signature = {
     keyId: sha256 hash of public key,
-    signature: rsa sha256 signature of link or layout
+    signature: sha256 with rsa signature of link or layout
 }
 ```
 ## JSON sample

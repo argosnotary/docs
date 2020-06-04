@@ -14,6 +14,7 @@ We would love for you to contribute to Argos Notary and help make it even better
  - [Feature Requests](#feature)
  - [Submission Guidelines](#submit)
  - [Coding Rules](#rules)
+ - [Formatting your source code](#clang-format)
  - [Commit Message Guidelines](#commit)
  - [Signing the CLA](#cla)
 
@@ -58,34 +59,34 @@ Before you submit your Pull Request (PR) consider the following guidelines:
 1. Make your changes in a new git branch:
 
 ```shell
-   git checkout -b my-fix-branch master
+$ git checkout -b my-fix-branch master
 ```
 
 1. Create your patch, **including appropriate test cases**.
 1. Follow our [Coding Rules](#rules).
-1. Run the full Argos Notary test suite, as described in the [developer documentation](30_developing), and ensure that all tests pass.
+1. Run the full Argos Notary test suite, as described in the developer documentation of the project and ensure that all tests pass.
 1. Commit your changes using a descriptive commit message that follows our [commit message conventions](#commit). Adherence to these conventions is necessary because release notes are automatically generated from these messages.
 
 ```shell
-   git commit -a
+git commit -a
 ```
     Note: the optional commit `-a` command line option will automatically "add" and "rm" edited files.
 
 1. Push your branch to GitHub:
 
 ```shell
-   git push origin my-fix-branch
+git push origin my-fix-branch
 ```
 
 1. In GitHub, send a pull request to `argos:master`.
 * If we suggest changes then:
   * Make the required updates.
-  * Re-run the Argos Notary test suites to ensure tests are still passing.
+  * Re-run the test suites to ensure tests are still passing.
   * Rebase your branch and force push to your GitHub repository (this will update your Pull Request):
 
 ```shell
-   git rebase master -i
-   git push -f
+git rebase master -i
+git push -f
 ```
 
 That's it! Thank you for your contribution!
@@ -97,25 +98,25 @@ After your pull request is merged, you can safely delete your branch and pull th
 * Delete the remote branch on GitHub either through the GitHub web UI or your local shell as follows:
 
 ```shell
-   git push origin --delete my-fix-branch
+git push origin --delete my-fix-branch
 ```
 
 * Check out the master branch:
 
 ```shell
-   git checkout master -f
+git checkout master -f
 ```
 
 * Delete the local branch:
 
 ```shell
-   git branch -D my-fix-branch
+git branch -D my-fix-branch
 ```
 
 * Update your master with the latest upstream version:
 
 ```shell
-   git pull --ff upstream master
+git pull --ff upstream master
 ```
 
 ## <a name="rules"></a> Coding Rules
@@ -123,23 +124,47 @@ To ensure consistency throughout the source code, keep these rules in mind as yo
 
 * All features or bug fixes **must be tested** by one or more specs (unit-tests).
 * All public API methods **must be documented**. (Details TBC).
-* Every source file should contain the [license header](docs/LicenseHeader.java). See [License Header Instructions](#header_instructions).
-* Wrap all code at **100 characters**. An automated formatter is available, see the [developing instructions](30_developing#clang-format).
+* Every source file should contain the license header. See [License Header Instructions](#header_instructions).
+* Wrap all code at **100 characters**. An automated formatter is available, see the [format instructions](#clang-format).
+
+## <a name="clang-format"></a> Formatting your source code
+
+Argos uses [clang-format](http://clang.llvm.org/docs/ClangFormat.html) to format the source code.
+If the source code is not properly formatted, the CI will fail and the PR cannot be merged.
+
+A better way is to set up your IDE to format the changed file on each file save.
   
 ## <a name="header_instructions"></a> License Header Instructions
 If you added a new file this should contain the default license header which gives the copy rights to the project.
 
-Headers can be added with the following command:
+Headers can be checked and added with the following commands depending on the build tool:
+
+### maven
+At first check the licenses:
 
 ```shell
-   mvn license:format
+mvn license:check
 ```
 
-After this you can check the result:
+If this fails use:
 
 ```shell
-   mvn license:check
+mvn license:format
 ```
+
+### Gradle
+At first check the licenses:
+
+```shell
+gradle license
+```
+
+If this fails use:
+
+```shell
+gradle licenseFormat
+```
+
 
 The generated changes should be comitted.
 
@@ -224,3 +249,4 @@ A detailed explanation can be found in this [document][commit-message-format].
 
 [commit-message-format]: https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#
 [github]: https://github.com/argosnotary/argos
+
