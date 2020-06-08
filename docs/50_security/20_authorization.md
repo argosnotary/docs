@@ -20,11 +20,15 @@ Most endpoints are connected to the hierarchy via either a service account or vi
 The permissions for a label cascade and aggregate up the hierarchy tree (meaning from the root label towards the branches).
 
 For example we have a hierarchy consisting of one root label A and two child labels B and C and 2 supplychains SB under B and SC under C.
-If the user has READ permissions on label a he/she also has read permission on labels B and C and their respective supply chains.
-If the user has LAYOUT_ADD permission on label B then he/she is only aloowed to add or edit a layout on the supplychain under B but not under C.
+If the user has READ permissions on label A he/she also has read permission on labels B and C and their respective supply chains.
+If the user has LAYOUT_ADD permission on label B then he/she is only allowed to add or edit a layout on the supplychain under B but not under C.
+This principle is illustrated in the diagram below:
+![Hierarchy permission example 1](/img/hierarchy-permissions.svg)
 
 An exception to the general rule is made for READ permissions these permissions also cascade down the hierarchy.
 When in the example above a READ permission is set on B but not on A then A is still visible to the user.
+See diagram below for an illustration:
+![Hierarchy permission example 2](/img/hierarchy-permissions-2.svg)
 
 ### Role based access
 Role based access is used to resolve permissons in order to allow access to endpoints wich are not connected to the hierarchy described above.
