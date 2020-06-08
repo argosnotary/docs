@@ -11,7 +11,7 @@ sidebar_label: Getting Started
 
 ### Activate
 
-Create docker volumes for mongodb.
+If you want to persist the mongodb data at first docker volumes should be created.
 
 ```bash
 docker volume create data_db 
@@ -21,7 +21,14 @@ docker volume create data_configdb
 Start Argos Notary with the following command:
 
 ```bash
-docker run -ti -p 80:80 -p 8080:8080 -p 8087:8087 -v data_db:/data/db -v data_configdb:/data/configdb --name argos argosnotary/argos
+docker run -ti -p 80:80 -p 8080:8080 -p 8087:8087 \
+       --name argos argosnotary/argos
+```
+or with volumes
+```bash
+docker run -ti -p 80:80 -p 8080:8080 -p 8087:8087 \
+       -v data_db:/data/db -v data_configdb:/data/configdb \
+       --name argos argosnotary/argos
 ```
 
 Argos Notary will be available <a href="http://localhost" target="_blank">here</a>
