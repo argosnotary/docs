@@ -18,6 +18,6 @@ Service accounts use basic auth authentication for the user a key id is used and
 
 ## OAUTH
 Below is an sequence diagram illustrating the interaction between the various components participating int the oauth Authorization Code Grant flow.
-![OAUTH](/img/plantuml/30_security_oauth.svg)
+![OAUTH](/img/plantuml/50_security_oauth.svg)
 ## Basic
 Basic auth headers are used to authenticate requests done by service accounts.
