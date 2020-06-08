@@ -31,7 +31,7 @@ See diagram below for an illustration:
 ![Hierarchy permission example 2](/img/hierarchy-permissions-2.svg)
 
 ### Role based access
-Role based access is used to resolve permissons in order to allow access to endpoints wich are not connected to the hierarchy described above.
+Role based access is used to resolve permissons in order to allow access to endpoints which are not connected to the hierarchy described above.
 This can be for example to allow users to see their personal account details or to allow administrators to create root labels and grant other users permissions to these labels.
 
 ### Permissions
