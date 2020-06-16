@@ -59,8 +59,8 @@ To resolve the host names used in the Helm charts add the following lines to the
 The `minikube ip` is the ip addres from the pervious step:
 
 ```
-<minikube ip>  argos-frontend.minikube.local
-<minikube ip>  argos-oauth-stub.minikube.local
+<minikube ip>  argos.minikube.local
+<minikube ip>  argos-oauthstub.minikube.local
 ```
 Enable ingress on the cluster
 ```bash
@@ -79,7 +79,7 @@ Install Argos Notary
 helm install argos argosnotary/argos
 ```
 
-Go to the Argos Dashboard with this <a href="https://argos-frontend.minikube.local" target="_blank">link</a>
+Go to the Argos Dashboard with this <a href="https://argos.minikube.local" target="_blank">link</a>
 :::caution
 Minikube should not be used in a Production environment. It is meant for experimental use only!
 :::
