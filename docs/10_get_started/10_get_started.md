@@ -55,7 +55,7 @@ minikube start
 # to get the ip address of the minikube host
 minikube ip
 ```
-To resolve the host names used in the Helm charts add the following line to the `hosts` file.
+To resolve the host names used in the Helm charts add the following lines to the `hosts` file.
 The `minikube ip` is the ip addres from the pervious step:
 
 ```
@@ -69,18 +69,14 @@ minikube addons enable ingress
 
 ### Activate
 
-Get the argos git repository.
+Add the argosnotary Helm repository
 ```bash
-git clone https://github.com/argosnotary/argos.git
-cd argos/helm/charts
+helm repo add argosnotary https://argosnotary.github.io/charts
+helm repo update
 ```
-Get the mongodb helm chart from bitnami and other dependencies.
+Install Argos Notary
 ```bash
-helm dependency update argos
-```
-Install all argos charts
-```bash
-helm install argos argos
+helm install argos argosnotary/argos
 ```
 
 Go to the Argos Dashboard with this <a href="https://argos-frontend.minikube.local" target="_blank">link</a>
