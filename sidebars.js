@@ -38,6 +38,15 @@ module.exports = {
     	'70_reference/23_verification',
     	{ 
     		type: 'category',
+    		label: 'Helm Charts',
+    		items: [
+    			{type: "link", label:"Argos Notary", href: "https://github.com/argosnotary/charts/blob/master/argosnotary/README.md"},
+        	    {type: "link", label:"XLDeploy Collector", href: "https://github.com/argosnotary/charts/blob/master/xldeploy-argos-collector/README.md"},
+        	    {type: "link", label:"Git Collector", href: "https://github.com/argosnotary/charts/blob/master/git-argos-collector/README.md"},
+        	]
+    	},
+    	{ 
+    		type: 'category',
     		label: 'Javadocs',
     		items: [
     			{type: "link", label:"argos-service", href: "https://argosnotary.github.io/generated/javadoc/argos-service"},

@@ -53,18 +53,23 @@ This image should not be used in a Production environment. It is meant for exper
 ```bash
 minikube start
 # to get the ip address of the minikube host
-minikube ip
+export MINIKUBE_IP=$(minikube ip)
 ```
 To resolve the host names used in the Helm charts add the following lines to the `hosts` file.
 The `minikube ip` is the ip addres from the pervious step:
 
 ```
-<minikube ip>  argos.minikube.local
-<minikube ip>  argos-oauthstub.minikube.local
+<minikube ip>  argosnotary.local
+<minikube ip>  oauthstub.local
 ```
-Enable ingress on the cluster
+Enable ingress on the cluster.
 ```bash
 minikube addons enable ingress
+```
+
+You have to wait until ingress is fully up, running and ready. Check by:
+```bash
+kubectl get po -A
 ```
 
 ### Activate
@@ -76,10 +81,10 @@ helm repo update
 ```
 Install Argos Notary
 ```bash
-helm install argos argosnotary/argos
+helm install argos argosnotary/argosnotary --set global.oauthstub.enabled=true,global.oauthstub.ip=${MINIKUBE_IP}
 ```
 
-Go to the Argos Dashboard with this <a href="https://argos.minikube.local" target="_blank">link</a>
+Go to the Argos Dashboard with this <a href="https://argosnotary.local" target="_blank">link</a>
 :::caution
 Minikube should not be used in a Production environment. It is meant for experimental use only!
 :::
