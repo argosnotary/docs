@@ -23,11 +23,9 @@ other which is more or less unique. This used during the [verification process](
 
 An `Artifact` is has an uri and the secure hash of the target of the uri. At this moment only files are supported.
 
-### Default exlusion pattern
-Gathering of artifacts has the default `glob` exclusion pattern `**.{git,link}**`.
+### Default exclusion pattern
+Gathering of artifacts has the default [glob](https://docs.oracle.com/javase/8/docs/api/java/nio/file/FileSystem.html#getPathMatcher-java.lang.String-) exclusion pattern `{**.git/**,**.git\\**}`.
 
-
-## Command __DEPRECATED!!__
 
 ## Specification
 
@@ -37,8 +35,7 @@ type Link = {
     layoutSegmentName: String,
     runId: String,
     materials: Artifact[],
-    products: Artifact[],
-    command: String
+    products: Artifact[]
 }
 
 type Artifact = {
