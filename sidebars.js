@@ -30,6 +30,17 @@ module.exports = {
     'System administration': ['40_administration/10_maintenance', '40_administration/20_recover'],
     Security: ['50_security/10_authentication', '50_security/20_authorization'],
     'Supply Chain management': ['60_supplychain_management/10_wip'],
+    Extensions: [
+    	{ 
+    		type: 'category',
+    		label: 'Approvals',
+    		items: [
+    			"65_extensions/10_approvals/10_approval_collector",
+    			"65_extensions/10_approvals/20_xldeploy_approval_collector",
+    			"65_extensions/10_approvals/30_git_approval_collector",
+        	]
+    	}
+    ],
     Reference: [
     	'70_reference/10_terminology',
     	'70_reference/20_layout',
