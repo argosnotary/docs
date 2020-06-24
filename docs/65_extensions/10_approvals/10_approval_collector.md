@@ -8,9 +8,9 @@ This is page is work in progress
 :::
 
 ## Introduction
-If the security policies of your organisation require this the approval framework in argos notary can be used for an
+If the security policies of your organisation require this, the approval framework in Argos Notary can be used for an
 additional approval step on source code or deployment.
-It allows functionaries (product owners technical leads etc..) to approve an set of source code or deployment artifacts within the argos front-end.
+It allows functionaries (product owners technical leads etc..) to approve a set of source code or deployment artifacts within the Argos.
 This process will collect artifacts from the collector microservice (descibed below) and will produce a link file comparable with a link file produced in a supply chain step.
 The functionary is asked to sign this link file with her or his personal key. In this way immutability and auditability is ensured for the artifacts signed.
 The approval step can be configured in the argos front-end using the layout editor.
@@ -27,11 +27,11 @@ The decision to use collector microservice as a proxy is made because it provide
 The diagram below illustrates the principles described.
 The lollipop symbols are the provide interfaces of the components.
 The semi-circle symbols represent the required interfaces.
-![COLLECTOR-FRAMEWORK](/img/collector-framework.svg)
+![COLLECTOR-FRAMEWORK](/img/approvals/collector-framework.svg)
 
 The sequence diagram below illustrates the interaction between the components in the approval process.
 
-![APPROVAL-FLOW](/img/approval_flow.svg)
+![APPROVAL-FLOW](/img/approvals/approval_flow.svg)
 
 
 
