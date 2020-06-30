@@ -80,7 +80,7 @@ helm install argos argosnotary/argosnotary -f values.yaml
 
 ## Install with Atlas MongoDB
 
-It is also possible to use the MongoDB cloud solution `Atlas MongoDB`. For this first 
+It is also possible to use the MongoDB cloud solution `Atlas MongoDB`. To use this you have to 
 create a database cluster at [Atlas MongoDB](https://cloud.mongodb.com). After this has been
 done and an account and connection string is created, the following yaml should be used as 
 input for the Helm install. Save this yaml in the file `values.yaml` and fill in all parameters.
