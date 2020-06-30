@@ -81,7 +81,8 @@ helm repo update
 ```
 Install Argos Notary
 ```bash
-helm install argos argosnotary/argosnotary --set global.oauthstub.enabled=true,global.oauthstub.ip=${MINIKUBE_IP}
+helm install argos argosnotary/argosnotary \
+      --set global.oauthstub.enabled=true,global.oauthstub.ip=${MINIKUBE_IP},dbhost_and_port=argos-mongodb
 ```
 
 Go to the Argos Dashboard with this <a href="https://argosnotary.local" target="_blank">link</a>
