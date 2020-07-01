@@ -4,15 +4,15 @@ title: Overview
 ---
 
 ## Introduction
-Argos provides a framework to protect the integrity of a [**software supply chain**](../50_reference/30_terminology#software-supply-chain-or-ssc). It provides a [**REST API**](../50_reference/10_api) and client libraries in order to protect the integrity of [**artifacts**](../50_reference/30_terminology#artifact) produced by a [**software supply chain**](../50_reference/30_terminology#software-supply-chain-or-ssc).
+Argos provides a framework to protect the integrity of a [**software supply chain**](../70_reference/10_terminology#software-supply-chain-or-ssc). It provides a [**REST API**](../50_reference/10_api) and client libraries in order to protect the integrity of [**artifacts**](../70_reference/10_terminology#artifact) produced by a [**software supply chain**](../70_reference/10_terminology#software-supply-chain-or-ssc).
  
-It does so by verifying that each [**step**](../50_reference/30_terminology#step) in the chain is carried out as planned, by authorized systems or personnel, and that the product is not tampered with in transit.
+It does so by verifying that each [**step**](../70_reference/10_terminology#step) in the chain is carried out as planned, by authorized systems or personnel, and that the product is not tampered with in transit.
 
-It allows a [**project owner**](../50_reference/30_terminology#project-owner) to create a layout. A [**layout**](../50_reference/30_terminology#layout) lists the sequence of steps of the software supply chain, and the [**functionaries**](../50_reference/30_terminology#functionary) authorized to perform these steps.
+It allows a [**project owner**](../70_reference/10_terminology#project-owner) to create a layout. A [**layout**](../70_reference/10_terminology#layout) lists the sequence of steps of the software supply chain, and the [**functionaries**](../70_reference/10_terminology#functionary) authorized to perform these steps.
 
-When a [**functionary**](../50_reference/30_terminology#functionary) performs a [**step**](../50_reference/30_terminology#step) it gathers information about the related files and sends it to the **Argos Notary Service** in a [**link**](../50_reference/30_terminology#link) metadata file. As a consequence [**link**](../50_reference/30_terminology#link) files provide the required evidence to establish a continuous chain that can be [**verified**](../50_reference/30_terminology#verification) against the steps defined in the [**layout**](../50_reference/30_terminology#layout)
+When a [**functionary**](../70_reference/10_terminology#functionary) performs a [**step**](../70_reference/10_terminology#step) it gathers information about the related files and sends it to the **Argos Notary Service** in a [**link**](../70_reference/10_terminology#link) metadata file. As a consequence [**link**](../70_reference/10_terminology#link) files provide the required evidence to establish a continuous chain that can be [**verified**](../70_reference/10_terminology#verification) against the steps defined in the [**layout**](../70_reference/10_terminology#layout)
 
-The [**layout**](../50_reference/30_terminology#layout), signed by the [**project owners**](../50_reference/30_terminology#project-owner) together with the links, signed by the designated [**functionaries**](../50_reference/30_terminology#functionary) for a particular [**supply chain run**](../50_reference/30_terminology#scr), can be verified by the service.
+The [**layout**](../70_reference/10_terminology#layout), signed by the [**project owners**](../70_reference/10_terminology#project-owner) together with the links, signed by the designated [**functionaries**](../70_reference/10_terminology#functionary) for a particular [**supply chain run**](../70_reference/10_terminology#scr), can be verified by the service.
 
 This **Overview** is a short description of the system. A complete definition can be found in other parts of the documentation.
 
