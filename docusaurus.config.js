@@ -52,7 +52,7 @@ module.exports = {
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/argosnotary',
+              href: 'https://twitter.com/account',
             },
           ],
         },
