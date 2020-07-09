@@ -35,7 +35,8 @@ module.exports = {
     			"63_approvals/30_git_approval_collector"
     			],
     Extensions: [ "65_extensions/10_jenkins_plugin",
-    			"65_extensions/20_xldeploy_plugin"
+    			"65_extensions/20_xldeploy_plugin",
+    			"65_extensions/30_docker_plugin"
     	],
     Reference: [
     	'70_reference/10_terminology',
