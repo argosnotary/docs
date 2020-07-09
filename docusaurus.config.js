@@ -44,15 +44,11 @@ module.exports = {
       style: 'dark',
       links: [
         {
-          title: 'Community',
+          title: 'Contact',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://link.naar.so',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/argosnotary',
+              label: 'e-mail',
+              href: 'mailto:info@argosnotary.org',
             },
           ],
         },
