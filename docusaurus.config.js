@@ -25,6 +25,7 @@ module.exports = {
       logo: {
         alt: 'Argos Notary Logo',
         src: 'img/logo.svg',
+        srcDark: 'img/logo_dark.svg',
       },
       links: [
         {
