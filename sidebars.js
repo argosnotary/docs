@@ -43,7 +43,8 @@ module.exports = {
     	'70_reference/20_layout',
     	'70_reference/21_link',
     	'70_reference/22_signing',
-    	'70_reference/23_verification',
+    	'70_reference/23_release',
+    	'70_reference/24_verification',
     	{ 
     		type: 'category',
     		label: 'Helm Charts',

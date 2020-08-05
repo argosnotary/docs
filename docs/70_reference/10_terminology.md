@@ -24,8 +24,11 @@ a material or a product, as described above. An artifact has a file path and a s
 An as uniquely as possible chosen identifier for a set of links, belonging to 1 segment, created during a run of the SSC. This id is used to collect link objects belonging to this run.
 #### End Products
 the files which are delivered by the SSC and which are installed on the client's system.
+#### Release
+the process by which data and metadata included in the end products is used to ensure its correctness. 
+After this correctness is established the Layout, Links and metadata is stored in a Release Dossier which is used for later verifications.  
 #### Verification
-the process by which data and metadata included in the end product is used to ensure its correctness. Verification is performed by the client by requesting a verification of a set of end products on the Argos Notary Service.
+Verification is performed by the client by requesting a verification of a set of end products in a deployable unit for availabillity of a Release Dossier with this same set of hashes on the Argos Notary Service.
 #### Project Owner
 the authoritative figure within a project. The project owner will dictate which steps are to be carried out in the supply chain, and who is authorized to carry out each step (i.e., define the layout).
 #### Functionary

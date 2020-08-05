@@ -44,24 +44,34 @@ Argos Notary has three types of components
 
 To exemplify the working of the system, we will describe a simple scenario.
 
-Consider a _project owner_, Alice, and her five _functionaries_, Diana, Bob, Carl, Build and Client. Alice wants Diana to write a Python script (foo.py). Then, Alice wants Build to package the script into a tarball (foo.tar.gz). This tarball will be sent to the client, Client, as part of the _end product_. Client wants to deploy this target file, foo.tar.gz.
+Consider a _project owner_, `Alice`, and her five _functionaries_, `Diana`, `Bob`, `Carl`, `Build` and `Client`. 
+`Alice` wants `Diana` to write a Python script (foo.py). Then, `Alice` wants `Build` to package the script into a tarball (foo.tar.gz). 
+This tarball will be sent to the client, `Client`, as part of the _end product_. `Client` wants to deploy this target file, foo.tar.gz.
 
-Alice will create a _layout_ object that will be used by the Argos Notary Service during the _verification_ request by Client to make sure of the following:
+`Alice` will create a _layout_ object that will be used by the Argos Notary Service during the _release_ request to make sure of the following:
 
-* That Bob and Carl approved the script which was written by Diana
-* That the script written by Diana was input for the packaging of the tarball done by Build.
-* That the tarball _end product_ is approved by Alice.
+* That `Bob` and `Carl` approved the script which was written by `Diana`
+* That the script written by `Diana` was input for the packaging of the tarball done by Build.
+* That the tarball _end product_ is approved by `Alice`.
 
-In order for the Argos Notary Servive to do this, it will need four _link_ objects and the _layout_: first, Alice’s _layout_, describing the requirements listed above. Then, 2 _link_ objects signed by Bob and Carl which correspond to the approval of Diana’s action of writing a script, and a _link_ object signed by Build for the _step_ of packaging the script. Finally, there should be a _link_ object, including the target file (foo.tar.gz) _artifact_, signed by Alice to approve the all _end products_.
+In order for the Argos Notary Servive to do this, it will need four _link_ objects and the _layout_: first, `Alice’s` _layout_, describing the requirements listed above. 
+Then, 2 _link_ objects signed by `Bob` and `Carl` which correspond to the approval of `Diana’s` action of writing a script, 
+and a _link_ object signed by `Build` for the _step_ of packaging the script. Finally, there should be a _link_ object, 
+including the target file (foo.tar.gz) _artifact_, signed by `Alice` to approve the all _end products_.
 
-When the Argos Notary Service verifies the end product on behalf of Deploy, it will perform the following checks:
+When the Argos Notary Service releases this end product on behalf of `Alice`, it will perform the following checks:
 
-1. The _layout_ exists and is signed with a trusted key (in this case, Alice's).
+1. The _layout_ exists and is signed with a trusted key (in this case, `Alice's`).
 2. All _end product_ _artifacts_ match with the expected _end products_ in the _layout_. 
 2. Every _step_ in the _layout_ has at least as much as needed corresponding _link_ objects signed by the intended _functionaries_, as described in the _layout_.
-3. All the _materials_ and _products_ listed in the _link_ object match, as specified by the _layout_. This will be used to prevent packages from being altered without a record (missing _artifacts_ in the _link_ object), or tampered with while in transit. In this case, the _products_ reported by Bob should match the _materials_ reported by Build and so on.
+3. All the _materials_ and _products_ listed in the _link_ object match, as specified by the _layout_. This will be used to prevent packages from being altered without 
+a record (missing _artifacts_ in the _link_ object), or tampered with while in transit. 
+In this case, the _products_ reported by Bob should match the _materials_ reported by Build and so on.
 
-If all of these _verifications_ pass, the Argos Notary Service returns the valid response on the request.
+If all of these _verifications_ pass, the Argos Notary Service creates and stores a Release Dossier and returns the valid response on the request.
+
+If `Client` wants to verify the validity of the target file it requests a verification of the hash in combination with optionally the domain of 
+the Supply Chain. For this request the Argos Notary Service checks the availabillity of the Release Dossier with the hash of the target file with optionally the domain.
 
 ![Workflow](/img/overview/00_overview_workflow.svg)<sub>1. the workflow for this example</sub>
 

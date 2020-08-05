@@ -21,43 +21,61 @@ At this moment only Azure AD is supported as OAUTH2 Provider.
 * nginx-ingress-controler: [documentation](https://github.com/kubernetes/ingress-nginx)
 * cert-manager: [documentation](https://github.com/jetstack/cert-manager)
 * Azure AD App Registration: [quickstart register app](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app)
+* Github OAUTH App: [building oauth apps](https://docs.github.com/en/developers/apps/building-oauth-apps)
+* Google OAUTH: [Setting up OAuth 2.0](https://support.google.com/cloud/answer/6158849?hl=en)
 
 ## Install with internal MongoDB
 
 The following yaml should be used as input for the Helm install. Save this yaml in the 
-file `values.yaml` and fill in all parameters.
+file `values.yaml` and fill in all parameters. All possible OAUTH providers are activated in this example.
 
 ```yaml
+global:
+  oauthstub:
+    enabled: false
+
 frontend: 
-  image:
-    repository: argosnotary/argos-frontend
   ingress:
     enabled: true    
     annotations:
       kubernetes.io/ingress.class: nginx
       cert-manager.io/cluster-issuer: letsencrypt
     hosts:
-      - host: notary.<your domain>
+      - host: '<ingress host>'
     tls:
       - secretName: tls-secret
         hosts:
-          - notary.<your domain>
+          - '<ingress host>'
 
 service:
   secret:
     mongodb_uri:
-      password: '<password>'
-  image:
-    repository: argosnotary/argos-service
-  aad:
-    client_provider_oauth_url_prefix: 'https://login.microsoftonline.com'
-    client_provider_user_info_url: 'https://graph.microsoft.com/v1.0/me'
-    client_secret: '<client secret>'
-    client_id: '<client id>'
-    authorizationUri: '<tenant id>/oauth2/v2.0/authorize'
-    tokenUri: '<tenant id>/oauth2/v2.0/token'
-    frontendRedirectBasePath: 'https://notary.argosnotary.org'
-    jwt_token: '<jwt token>'
+      password: '<mongo password>'
+      dbhost_and_port: '<release name>-mongodb'
+  oauth2:
+    client:
+      registration:
+        azure:
+          clientId: '<azure client id>'
+          clientSecret: '<azure client secret>'
+        github:
+          clientId: '<github client id>'
+          clientSecret: '<github client secret>'
+        google:
+          clientId: '<google client id>'
+          clientSecret: '<google client secret>'
+      provider:
+        azure:
+          enabled: true
+        github:
+          enabled: true
+        google:
+          enabled: true
+  auth:
+    frontendRedirectBasePath: '<loadbalancer endpoint>'
+  jwt:
+    token:
+      secret: '<generated jwt token>'
 
 mongodb:
   mongodbRootPassword: '<random string as mongodb password>'
@@ -65,9 +83,8 @@ mongodb:
 
 | Parameter     | Description                                                                                  |
 | ------------- | -------------------------------------------------------------------------------------------- |
-| client id     | The client id of the Azure AD app                                                            |
-| client secret | The secret of the Azure AD app                                                               |
-| tenant id     | The tenant id of the Azure account used for the AAD app                                      |
+| client id     | The client id's of the OAUTH Providers                                                            |
+| client secret | The secrets of the OAUTH Providers                                    |
 | jwt token     | JWT Token used for OAUTH, a new one should be created                                        |         
 | password      | choose a random string which will be used as the mongodb root password during initialization |
 
@@ -82,56 +99,24 @@ helm install argos argosnotary/argosnotary -f values.yaml
 
 It is also possible to use the MongoDB cloud solution `Atlas MongoDB`. To use this you have to 
 create a database cluster at [Atlas MongoDB](https://cloud.mongodb.com). After this has been
-done and an account and connection string is created, the following yaml should be used as 
-input for the Helm install. Save this yaml in the file `values.yaml` and fill in all parameters.
+done and an account and connection string is created, the following yaml statements should be used as 
+input for the Helm install.
 
 ```yaml
-frontend: 
-  image:
-    repository: argosnotary/argos-frontend
-  ingress:
-    enabled: true    
-    annotations:
-      kubernetes.io/ingress.class: nginx
-      cert-manager.io/cluster-issuer: letsencrypt
-    hosts:
-      - host: notary.<your domain>
-    tls:
-      - secretName: tls-secret
-        hosts:
-          - notary.<your domain>
-
+# extra options for Atlas MongoDB
 service:
   secret:
     mongodb_uri:
-      username: '<username>'
-      password: '<password>'
-      # use connection string delivered by Atlas MongoDB
-      dbhost_and_port: '<host and port>'
-      dbconn: '<connection uri>'
+      password: '<password delivered by Atlas MongoDB>'
+      dbhost_and_port: '<from Atlas connection url>'
+      dbconn: '<from Atlas connection url>'
       dbprotocol: 'mongodb+srv'
-  image:
-    repository: argosnotary/argos-service
-  aad:
-    client_provider_oauth_url_prefix: 'https://login.microsoftonline.com'
-    client_provider_user_info_url: 'https://graph.microsoft.com/v1.0/me'
-    client_secret: '<client secret>'
-    client_id: '<client id>'
-    authorizationUri: '<tenant id>/oauth2/v2.0/authorize'
-    tokenUri: '<tenant id>/oauth2/v2.0/token'
-    frontendRedirectBasePath: 'https://notary.argosnotary.org'
-    jwt_token: '<jwt token>'
-
 # an external mongodb cluster is used
 mongodb:
   enabled: false
 ```
 | Parameter      | Description                                                                  |
 | -------------- | ---------------------------------------------------------------------------- |
-| client id      | The client id of the Azure AD app                                            |
-| client secret  | The client secret of the Azure AD app                                        |
-| tenant id      | The tenant id of the Azure account used for the AAD app                      |
-| jwt token      | JWT Token used for OAUTH, a new one should be created                        |  
 | host and port  | The host and port part of the `Atlas MongoDB` cluster connection string      |  
 | connection uri | The uri part of the  `Atlas MongoDB` cluster connection string               | 
 | username       | This is the account created on `Atlas MongoDB` for connecting to the cluster |

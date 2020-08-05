@@ -33,30 +33,22 @@ type LinkMetaBlock = {
 
 type Signature = {
     keyId: sha256 hash of public key,
-    signature: sha256 with rsa signature of link or layout
+    signature: ECDSA with sha384 signature of link or layout
+    hashAlgorithm: SHA-384
+    keyAlgorithm: EC
 }
 ```
 ## JSON sample
 
 ```
 {
-  "link": {
-    "runId": "69af2dd",
-    "layoutSegmentName": "segment1",
-    "materials": [
-      {
-        "uri": "src/test/java/com/rabobank/argos/test/ArgosServiceTestIT.java",
-        "hash": "61a0af2b177f02a14bab478e68d4907cda4dc3f642ade0432da8350ca199302b"
-      }
-    ],
-    "stepName": "build",
-    "products": [
-      {
-        "uri": "src/test/java/com/rabobank/argos/test/ArgosServiceTestIT.java",
-        "hash": "61a0af2b177f02a14bab478e68d4907cda4dc3f642ade0432da8350ca199302b"
-      }
-    ]
-  }
+    "signature": {
+      "keyId": "889c4682999196528ad4fe32c2ed1463c9a556800c89514cb1acee16406ac926",
+      "signature": "MzA0NjAyMjEwMDllNTViOGM1ODZjODdiYTM5MDFmMWJmMWMxZWNlZmIzOTU2ZDlkMzM5OTU2Yjg2YjBhN2FkNzk4YWUzNGUyNmEwMjIxMDBmNmQ4NmRhYTE1YmMzNDE5MjM4YWQ3YjBlNDk1NzE1MjZiZTE0ODkwNmU2Mzg1NWU2ODcxOTBiZjE2Y2Y0NmE0",
+      "keyAlgorithm": "EC",
+      "hashAlgorithm": "SHA384"
+    },
+    "link": {}
 }
 ```
 ## Sign

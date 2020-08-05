@@ -1,5 +1,5 @@
 ---
-id: 23_verification
+id: 24_verification
 title: Verification of a software package
 sidebar_label: Verification
 ---

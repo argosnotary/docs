@@ -66,7 +66,7 @@ The following rules can be specified:
 * DISALLOW: indicates that artifacts matched by the pattern are not allowed.
 * REQUIRE: indicates that a pattern must appear and are consumed by this rule.
 * CREATE: indicates that products matched by the pattern must not appear as materials of the step.
-* CREATEORMODIFY: indicates that products matched are `MODIFIED` or `CREATED` compared to the materials of the step.
+* CREATE_OR_MODIFY: indicates that products matched are `MODIFIED` or `CREATED` compared to the materials of the step.
 * DELETE: indicates that materials matched by the pattern must not appear as products of the step.
 * MODIFY: indicates that products matched by this pattern must appear as materials of the step, and their hashes must not by the same.
 
