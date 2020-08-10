@@ -35,6 +35,11 @@ module.exports = {
           position: 'left',
         },
         {
+          to: 'blog',
+          activeBasePath: 'blog',
+          label: 'Blog', 
+          position: 'left'},
+        {
           href: 'https://github.com/argosnotary',
           label: 'GitHub',
           position: 'right',
