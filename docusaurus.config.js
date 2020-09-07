@@ -27,7 +27,7 @@ module.exports = {
         src: 'img/logo.svg',
         srcDark: 'img/logo_dark.svg',
       },
-      links: [
+      items: [
         {
           to: 'docs/00_overview/10_overview',
           activeBasePath: 'docs',
@@ -72,7 +72,4 @@ module.exports = {
       },
     ],
   ],
-  plugins: [(md) => {
-      require('remarkable-plantuml')(md);
-  }],
 };

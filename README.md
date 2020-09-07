@@ -5,6 +5,7 @@
 ### Run local website
 
 ```shell
+   $ npm install
    $ npm run start
 ```
 
