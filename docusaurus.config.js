@@ -49,7 +49,7 @@ module.exports = {
           items: [
             {
               label: 'e-mail',
-              href: 'mailto:info@argosnotary.com',
+              href: 'mailto:support@argosnotary.com',
             },
           ],
         },
