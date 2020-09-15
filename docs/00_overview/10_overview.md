@@ -4,7 +4,7 @@ title: Overview
 ---
 
 ## Introduction
-Argos provides a framework to protect the integrity of a [**software supply chain**](../70_reference/10_terminology#software-supply-chain-or-ssc). It provides a [**REST API**](../50_reference/10_api) and client libraries in order to protect the integrity of [**artifacts**](../70_reference/10_terminology#artifact) produced by a [**software supply chain**](../70_reference/10_terminology#software-supply-chain-or-ssc).
+Argos provides a framework to protect the integrity of a [**software supply chain**](../70_reference/10_terminology#software-supply-chain-or-ssc). It provides a [**REST API**](https://argosnotary.github.io/generated/openapi/) and client libraries in order to protect the integrity of [**artifacts**](../70_reference/10_terminology#artifact) produced by a [**software supply chain**](../70_reference/10_terminology#software-supply-chain-or-ssc).
  
 It does so by verifying that each [**step**](../70_reference/10_terminology#step) in the chain is carried out as planned, by authorized systems or personnel, and that the product is not tampered with in transit.
 
