@@ -17,7 +17,15 @@ module.exports = {
   docs: 
   {
     Overview: ['00_overview/10_overview'],
-    'Getting started': ['10_get_started/10_get_started', '10_get_started/20_examples'],
+    'Getting started': ['10_get_started/05_get_started_cloud', 
+        '10_get_started/10_get_started', 
+        '10_get_started/20_examples'],
+    'User Manual': ['15_user_manual/10_user_profile', 
+        '15_user_manual/15_permissions', 
+        '15_user_manual/20_service_account', 
+        '15_user_manual/25_layout', 
+        '15_user_manual/30_approval',
+        '15_user_manual/35_release'],
     Architecture: [
     	'20_architecture/10_architecture', 
     	{ 
