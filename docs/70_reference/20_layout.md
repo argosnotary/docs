@@ -36,7 +36,7 @@ products as nodes and the matchrules as edges. The match rules in the expected e
 which should also be the starting point of
 the graph.
 
-This constraints are necessary to create contexts used during the [verification](23_verification) of end products.
+This constraints are necessary to create contexts used during the [verification](24_verification) of end products.
 
 ## Step
 
@@ -77,8 +77,7 @@ from a `destinationStep` and `destinationSegment` with the `destinationPathPrefi
 For example, match `foo` with `PRODUCTS` from the step `compilation` in the segment `jenkins` indicates 
 that the file `foo`, a product of the step `compilation` in the segment `jenkins`, 
 must correspond to either a material or a product in this step (depending on where 
-this artifact rule was listed). More complex uses of the MATCH rule are presented 
-in the [examples](20_examples).
+this artifact rule was listed).
 
 The `sourcePathPrefix`, `destinationPathPrefix` and  `destinationSegmentName` properties are optional, 
 The `pathPrefixes` are used to match products and materials whose path differs from the one presented 

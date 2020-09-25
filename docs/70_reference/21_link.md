@@ -15,7 +15,7 @@ After gathering all evidence it is digital signed by the `Functionary` running t
 
 Every Link has a runId. This runId is as unique as possible to group Links which belong to each other. As an example all Link objects in a 
 [LayoutSegment](20_layout/#layoutsegment). A git commit can be used, a timestamp or an application version or something
-other which is more or less unique. This used during the [verification process](23_verification).  
+other which is more or less unique. This used during the [verification process](24_verification).  
 
 ![Link](/img/plantuml/70_reference_link.svg)
 

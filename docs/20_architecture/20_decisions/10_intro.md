@@ -22,5 +22,3 @@ We tend to make decisions very fast which may have a significant impact on the a
 2. Decisions are very close on the actual code. Documentation on Confluence (or another platform) is often outdated. Also these decisions are coupled to releases now.
 3. Part of pull requests
 
-## Index    
-[template](99_template)

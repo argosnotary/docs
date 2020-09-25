@@ -23,7 +23,7 @@ module.exports = {
     	{ 
     		type: 'category',
     		label: 'Architectural Decisions',
-    		items: [ '20_architecture/20_decisions/10_intro', '20_architecture/20_decisions/99_template']
+    		items: [ '20_architecture/20_decisions/10_intro']
     	},
     ],
     Installation: ['30_installation/10_installation', '30_installation/20_upgrade'],
