@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 module.exports = {
-  title: 'Argos Notary Cloud',
+  title: 'Argos Notary',
   url: 'https://www.argosnotary.com',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
@@ -28,11 +28,6 @@ module.exports = {
         srcDark: 'img/logo_dark.svg',
       },
       items: [
-        {
-          href: 'https://cloud.argosnotary.com',
-          label: 'Cloud',
-          position: 'right',
-        },
         {
           to: 'docs/00_overview/10_overview',
           activeBasePath: 'docs',

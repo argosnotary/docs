@@ -17,7 +17,7 @@ module.exports = {
   docs: 
   {
     Overview: ['00_overview/10_overview'],
-    'Getting started': ['10_get_started/05_get_started_cloud', 
+    'Getting started': [ 
         '10_get_started/10_get_started', 
         '10_get_started/20_examples'],
     'User Manual': ['15_user_manual/10_user_profile', 

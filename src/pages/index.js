@@ -12,7 +12,7 @@ function Home() {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Argos Notary brings trust back in software">
+      description="Argos Notary brings back the trust in software">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
@@ -23,7 +23,7 @@ function Home() {
                 'button button--outline button--secondary button--lg',
                 styles.getStarted,
               )}
-              to={useBaseUrl('docs/10_get_started/05_get_started_cloud')}>
+              to={useBaseUrl('docs/10_get_started/10_get_started')}>
               Try it out!
             </Link>
           </div>
