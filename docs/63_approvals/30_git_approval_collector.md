@@ -41,12 +41,14 @@ docker run -d -p 8080:8080 --restart=unless-stopped \
 
 Add the `argosnotary` Helm repository
 ```bash
-helm repo add argosnotary https://argosnotary.github.io/charts
+helm repo add argosnotary https://charts/argosnotary.com
 helm repo update
 ```
 Install Git Argos Collector
 ```bash
-helm install git argosnotary/git-argos-collector --set "collector.baseurl=https://github.com"
+helm install git argosnotary/git-argos-collector \
+      --set "collector.type=GIT,collector.baseurl=https://github.com" \
+      --set ingress.hosts[0].host=git-collector.local,ingress.hosts[0].paths[0]="/"
 ```
 
 ## Configuration
@@ -78,7 +80,7 @@ Add a XL Deploy Approval following these steps
 ![Fields](/img/approvals/add_git_collector.png)
 
 * Choose a relevant name
-* The `Service url` is the url of the collector defined in the pervious [installation step](#install)
+* The `Collector Service url` is the url of the collector defined in the pervious [installation step](#install)
 * `Repository path` is the path from the `Service url` to the Git repository
 * Save, and, after finishing the layout, sign and submit it to the Argos Notary Service
 

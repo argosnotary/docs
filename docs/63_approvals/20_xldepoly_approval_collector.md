@@ -41,12 +41,14 @@ docker run -d -p 8080:8080 --restart=unless-stopped \
 
 Add the `argosnotary` Helm repository
 ```bash
-helm repo add argosnotary https://argosnotary.github.io/charts
+helm repo add argosnotary https://charts.argosnotary.com
 helm repo update
 ```
 Install XL Deploy Argos Collector
 ```bash
-helm install xldeploy argosnotary/xldeploy-argos-collector --set "collector.baseurl=http://xl-deploy-host:4516"
+helm install xldeploy-collector argosnotary/argos-collector \
+      --set "collector.type=XLDEPLOY,collector.baseurl=http://xl-deploy-host:4516" \
+      --set ingress.hosts[0].host=xldeploy-collector.local,ingress.hosts[0].paths[0]="/"
 ```
 
 ## Configuration
@@ -76,14 +78,14 @@ Add a XL Deploy Approval following these steps
 ![Fields](/img/approvals/add_xld_collector.png)
 
 * Choose a relevant name
-* The `Service url` is the url of the collector defined in the pervious [installation step](#install)
+* The `Collector Service url` is the url of the collector defined in the pervious [installation step](#install)
 * `Application Name` is the `XL Deploy` `udm.Application` Name
 * Save, and after finishing the layout sign and submit it to the Argos Notary Service
 
 ## Approve
 
 If the `Functionary` is a person and her or his key is one of the authorized keys on the step and has the 
-`add a link` permission, this person can do an apporval on the `Supply Chain`.
+`add a link` permission, this person can do an approval on the `Supply Chain`.
 
 1. In the Argos Notary Service go to the `Supply Chain` on which there should be an approval.
 2. Right mouse button > choose `Approve step`

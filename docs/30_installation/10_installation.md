@@ -11,18 +11,19 @@ This is page is work in progress
 
 The installation will be based on `Kubernetes` and `Helm3` charts. 
 
-At this moment only Azure AD is supported as OAUTH2 Provider.
+This is tested with Azure Kubernetes Service and Google Kubernetes Engine.
 
 ## Prerequesites
 
-* kubernetes 1.15+: [documentation](https://kubernetes.io/docs/home/)
+* A kubernetes 1.15+ cluster: [documentation](https://kubernetes.io/docs/home/)
 * kubectl: [documentation](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 * helm3 3.1+: [documentation](https://helm.sh/docs/intro/install/)
 * nginx-ingress-controler: [documentation](https://github.com/kubernetes/ingress-nginx)
 * cert-manager: [documentation](https://github.com/jetstack/cert-manager)
-* Azure AD App Registration: [quickstart register app](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app)
-* Github OAUTH App: [building oauth apps](https://docs.github.com/en/developers/apps/building-oauth-apps)
-* Google OAUTH: [Setting up OAuth 2.0](https://support.google.com/cloud/answer/6158849?hl=en)
+* One or more OAUTH providers:
+  * Azure AD App Registration: [quickstart register app](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app)
+  * Github OAUTH App: [building oauth apps](https://docs.github.com/en/developers/apps/building-oauth-apps)
+  * Google OAUTH: [Setting up OAuth 2.0](https://support.google.com/cloud/answer/6158849?hl=en)
 
 ## Install with internal MongoDB
 
@@ -34,12 +35,22 @@ global:
   oauthstub:
     enabled: false
 
-frontend: 
+frontend:
+  replicaCount: 2
+  autoscaling:
+    enabled: true
+    minReplicas: 2
+    maxReplicas: 4
+  resources:
+    limits:
+      cpu: 100m
+      memory: 100Mi 
   ingress:
     enabled: true    
     annotations:
       kubernetes.io/ingress.class: nginx
-      cert-manager.io/cluster-issuer: letsencrypt
+      cert-manager.io/cluster-issuer: letsencrypt-prod
+      acme.cert-manager.io/http01-edit-in-place: "true"
     hosts:
       - host: '<ingress host>'
     tls:
@@ -48,6 +59,15 @@ frontend:
           - '<ingress host>'
 
 service:
+  replicaCount: 2
+  autoscaling:
+    enabled: true
+    minReplicas: 2
+    maxReplicas: 4
+  resources:
+    limits:
+      cpu: 300m
+      memory: 1500Mi
   secret:
     mongodb_uri:
       password: '<mongo password>'
@@ -66,7 +86,10 @@ service:
           clientSecret: '<google client secret>'
       provider:
         azure:
-          enabled: true
+          enabled: true          
+          authorizationUri: https://login.microsoftonline.com/organizations/oauth2/v2.0/authorize
+          tokenUri: https://login.microsoftonline.com/organizations/oauth2/v2.0/token
+          userInfoUri: https://graph.microsoft.com/v1.0/me
         github:
           enabled: true
         google:
@@ -110,20 +133,21 @@ input for the Helm install.
 service:
   secret:
     mongodb_uri:
-      password: '<password delivered by Atlas MongoDB>'
-      dbhost_and_port: '<from Atlas connection url>'
-      dbconn: '<from Atlas connection url>'
+      username: 'root'
+      password: '<password created on Atlas MongoDB>'
+      dbhost_and_port: '<from Atlas Application connection url>'
+      dbconn: '<from Atlas Application connection url>'
       dbprotocol: 'mongodb+srv'
 # an external mongodb cluster is used
 mongodb:
   enabled: false
 ```
-| Parameter      | Description                                                                  |
-| -------------- | ---------------------------------------------------------------------------- |
-| host and port  | The host and port part of the `Atlas MongoDB` cluster connection string      |  
-| connection uri | The uri part of the  `Atlas MongoDB` cluster connection string               | 
-| username       | This is the account created on `Atlas MongoDB` for connecting to the cluster |
-| password       | This is the password for the mongo account                                   |
+| Parameter      | Description                                                                        |
+| -------------- | ---------------------------------------------------------------------------------- |
+| host and port  | The host and port part of the `Atlas MongoDB` cluster Application connection string |  
+| connection uri | The uri part of the  `Atlas MongoDB` cluster Application connection string          | 
+| username       | This is the account created on `Atlas MongoDB` for connecting to the cluster        |
+| password       | This is the password for the mongo account                                         |
 
 ### Install Argos Notary
 ```shell

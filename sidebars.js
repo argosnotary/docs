@@ -34,8 +34,8 @@ module.exports = {
     		items: [ '20_architecture/20_decisions/10_intro']
     	},
     ],
-    Installation: ['30_installation/10_installation', '30_installation/20_upgrade'],
-    'System administration': ['40_administration/10_maintenance', '40_administration/20_recover'],
+    Installation: ['30_installation/10_installation'],
+    'System administration': ['40_administration/10_recover'],
     Security: ['50_security/10_authentication', '50_security/20_authorization'],
     'Supply Chain management': ['60_supplychain_management/10_wip'],
     Approvals: ["63_approvals/10_approval_collector",
