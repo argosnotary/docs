@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Copyright (C) 2019 - 2020 Rabobank Nederland
+# Copyright (C) 2020 Argos Notary
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -30,11 +30,12 @@ echo "generating documents for Argos Notary version ${VERSION}"
 npx openapi-generator generate -i "https://raw.githubusercontent.com/argosnotary/argos-parent/${BRANCH}/argos-service-api/api.yml" -o ${GENERATED_DIRECTORY}/openapi -g html2
 
 for jar in $JARS; do
-    curl -OLJ "https://repo1.maven.org/maven2/com/rabobank/argos/${jar}/${VERSION}/${jar}-${VERSION}-javadoc.jar"
+    rm -f ${GENERATED_DIRECTORY}/javadoc/${jar}/*
+    curl -OLJ "https://repo1.maven.org/maven2/com/argosnotary/argos/${jar}/${VERSION}/${jar}-${VERSION}-javadoc.jar"
     unzip -u ${jar}*.jar -d ${GENERATED_DIRECTORY}/javadoc/${jar}
 done
 
-curl -OJL "http://sourceforge.net/projects/plantuml/files/plantuml.jar/download"
+#curl -OJL "http://sourceforge.net/projects/plantuml/files/plantuml.jar/download"
 
-java -jar plantuml.jar -tsvg "${PLANTUML_DIRECTORY}/"
+#java -jar plantuml.jar -tsvg "${PLANTUML_DIRECTORY}/"
 
