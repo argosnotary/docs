@@ -92,6 +92,9 @@ mongodb:
 ### Install Argos Notary
 
 ```shell
+helm repo add argosnotary https://charts.argosnotary.com
+helm repo update
+
 helm install argos argosnotary/argosnotary -f values.yaml
 ```
 

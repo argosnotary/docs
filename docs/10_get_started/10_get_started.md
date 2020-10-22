@@ -77,7 +77,7 @@ kubectl get po -A
 
 Add the argosnotary Helm repository
 ```bash
-helm repo add argosnotary https://argosnotary.github.io/charts
+helm repo add argosnotary https://charts.argosnotary.com
 helm repo update
 ```
 Install Argos Notary
